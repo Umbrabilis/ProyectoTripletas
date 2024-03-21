@@ -1,10 +1,17 @@
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.Files;
 public class Main {
     public static void main(String[] args) {
-        String archivo = "C:\\Users\\E2112\\IdeaProjects\\AP3\\MatricesDispersas\\src\\Matriz.txt";
-        int Matriz[][] = Matriz(archivo);
-        String archivo2 = "C:\\Users\\E2112\\IdeaProjects\\AP3\\MatricesDispersas\\src\\Matriz2.txt";
-        int Matriz2[][] = Matriz(archivo2);
+        String nombreArchivoRelativo = "MatricesDispersas" + File.separator + "src" + File.separator + "Matriz.txt";
+        File archivo = new File(nombreArchivoRelativo);
+        String rutaAbsoluta = archivo.getAbsolutePath();
+        int Matriz[][] = Matriz(rutaAbsoluta);
+        String Matriz2Ruta = "MatricesDispersas" + File.separator + "src" + File.separator + "Matriz2.txt";
+        String archivo2 = "Matriz2.txt";
+        String rutaAbsolutaMatriz2 = archivo.getAbsolutePath();
+        int Matriz2[][] = Matriz(rutaAbsolutaMatriz2);
         //Tripleta T = new Tripleta(DatosDiferentesdeCero(Matriz), Matriz.length, Matriz[0].length);
         //Tripleta T2 = new Tripleta(DatosDiferentesdeCero(Matriz2), Matriz2.length, Matriz2[0].length);
         //T.LlenarTripleta(Matriz);
